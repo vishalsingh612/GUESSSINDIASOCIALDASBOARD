@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function KpiCard({ icon, label, value, subValue }) {
+export default function KpiCard({ icon, label, value, sub }) {
   return (
     <div className="glass cardPad" style={{ display: "flex", gap: 12, alignItems: "center" }}>
       <div
@@ -18,12 +18,10 @@ export default function KpiCard({ icon, label, value, subValue }) {
         {icon}
       </div>
 
-      <div style={{ flex: 1 }}>
+      <div>
         <div style={{ fontSize: 12, color: "#bdbdbd" }}>{label}</div>
         <div style={{ fontSize: 22, fontWeight: 900, color: "#00ff66" }}>{value}</div>
-        {subValue ? (
-          <div style={{ fontSize: 12, color: "#9a9a9a", marginTop: 2 }}>{subValue}</div>
-        ) : null}
+        {sub ? <div style={{ fontSize: 12, color: "#9a9a9a", marginTop: 2 }}>{sub}</div> : null}
       </div>
     </div>
   );

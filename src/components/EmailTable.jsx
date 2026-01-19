@@ -6,7 +6,7 @@ export default function EmailTable({ title, rows, total }) {
       <div className="sectionTitle">{title}</div>
 
       <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 720 }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 860 }}>
           <thead>
             <tr style={{ color: "#00ff66", textAlign: "left" }}>
               <th style={{ padding: 10 }}>Group</th>

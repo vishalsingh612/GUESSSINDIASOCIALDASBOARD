@@ -1,0 +1,464 @@
+/* ==========================================
+   GUESSS INDIA DASHBOARD THEME (CRA)
+   Neon Green + Glass UI (Responsive)
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ✅ Background */
+  body {
+    font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
+    background: radial-gradient(circle at 20% 10%, rgba(0, 255, 102, 0.14), transparent 45%),
+      radial-gradient(circle at 80% 30%, rgba(0, 194, 255, 0.12), transparent 45%),
+      radial-gradient(circle at 50% 80%, rgba(179, 92, 255, 0.1), transparent 50%),
+      #070707;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* ✅ Nice grid dot texture (subtle) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  
+  /* ==========================================
+     Container
+  ========================================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 26px 18px 60px;
+  }
+  
+  /* ==========================================
+     Glass Card Style
+  ========================================== */
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 22px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* spacing inside cards */
+  .cardPad {
+    padding: 18px;
+  }
+  
+  /* ==========================================
+     Header
+  ========================================== */
+  .header {
+    padding: 18px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .brandDot {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: #00ff66;
+    box-shadow: 0 0 16px rgba(0, 255, 102, 0.85);
+  }
+  
+  .brandTitle {
+    font-size: 18px;
+    font-weight: 1000;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+  }
+  
+  .subTitle {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  
+  /* ==========================================
+     Tabs / Buttons
+  ========================================== */
+  .tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .tabBtn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 950;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.84);
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    box-shadow: 0 0 0 rgba(0, 255, 102, 0);
+    transition: all 0.2s ease;
+    text-decoration: none; /* for Link buttons */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hover */
+  .tabBtn:hover {
+    transform: translateY(-1px);
+    color: #ffffff;
+    border: 1px solid rgba(0, 255, 102, 0.6);
+    box-shadow: 0 0 16px rgba(0, 255, 102, 0.18);
+  }
+  
+  /* Active */
+  .tabBtnActive {
+    background: rgba(0, 255, 102, 0.12);
+    border: 1px solid rgba(0, 255, 102, 0.9);
+    color: #00ff66;
+    box-shadow: 0 0 22px rgba(0, 255, 102, 0.25);
+  }
+  
+  /* ==========================================
+     Section Titles
+  ========================================== */
+  .sectionTitle {
+    font-size: 14px;
+    font-weight: 950;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+  }
+  
+  /* ==========================================
+     Main Grid
+  ========================================== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  /* ==========================================
+     Charts: Improve text visibility
+  ========================================== */
+  .recharts-tooltip-wrapper {
+    outline: none !important;
+  }
+  
+  .recharts-default-tooltip {
+    background: rgba(0, 0, 0, 0.92) !important;
+    border: 1px solid rgba(0, 255, 102, 0.45) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.18) !important;
+    padding: 10px 12px !important;
+    color: #ffffff !important;
+  }
+  
+  .recharts-tooltip-label {
+    color: #00ff66 !important;
+    font-weight: 1000 !important;
+  }
+  
+  .recharts-tooltip-item {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 800 !important;
+  }
+  
+  /* ==========================================
+     Tables (Email table polish)
+  ========================================== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    font-size: 13px;
+    font-weight: 1000;
+    color: #00ff66;
+  }
+  
+  tbody td {
+    font-size: 13px;
+  }
+  
+  /* ==========================================
+     Card hover (optional nice effect)
+  ========================================== */
+  .glass:hover {
+    border: 1px solid rgba(0, 255, 102, 0.22);
+  }
+  
+  /* ==========================================
+     Responsive rules
+  ========================================== */
+  @media (max-width: 1024px) {
+    .container {
+      padding: 20px 14px 60px;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .tabs {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+  
+  @media (max-width: 780px) {
+    .grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .brandTitle {
+      font-size: 16px;
+    }
+  
+    .tabBtn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  /* ==========================================
+   HOME PAGE UI (Logo + Arrows + Responsive)
+========================================== */
+
+.homeHero {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .homeHeroTitle {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-weight: 1000;
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .homeLogoWrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  
+  .homeLogo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 102, 0.22));
+  }
+  
+  .homeImpressionsLabel {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 800;
+    margin-top: 6px;
+  }
+  
+  .homeImpressionsValue {
+    margin: 14px auto 0;
+    display: inline-block;
+    padding: 18px 28px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(0, 255, 102, 0.35);
+    color: #00ff66;
+    font-weight: 1100;
+    font-size: 52px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 22px rgba(0, 255, 102, 0.12);
+  }
+  
+  .homeFlowWrap {
+    margin-top: 26px;
+    position: relative;
+  }
+  
+  /* ✅ Arrows */
+  .homeArrows {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .homeArrowSvg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+  }
+  
+  /* ✅ Pills row like your UI */
+  .homeNavPills {
+    margin-top: -25px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .homePill {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 1000;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.88);
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(0, 255, 102, 0.28);
+    transition: 0.2s;
+  }
+  
+  .homePill:hover {
+    transform: translateY(-1px);
+    border: 1px solid rgba(0, 255, 102, 0.7);
+    box-shadow: 0 0 18px rgba(0, 255, 102, 0.18);
+  }
+  
+  .homePill.active {
+    background: rgba(0, 255, 102, 0.12);
+    border: 1px solid rgba(0, 255, 102, 0.95);
+    color: #00ff66;
+    box-shadow: 0 0 22px rgba(0, 255, 102, 0.25);
+  }
+  
+  /* ✅ Icon cards grid */
+  .homeCardsGrid {
+    margin-top: 18px;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  
+  .homeIconCard {
+    padding: 18px;
+    border-radius: 22px;
+    min-height: 160px;
+    text-align: center;
+    transition: 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .homeIconCard:hover {
+    transform: translateY(-2px);
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.12);
+  }
+  
+  .homeIcon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 12px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 255, 90, 0.12);
+    border: 1px solid rgba(0, 255, 90, 0.22);
+    color: #00ff66;
+  }
+  
+  .homeCardTitle {
+    font-size: 16px;
+    font-weight: 1000;
+    color: #fff;
+  }
+  
+  .homeCardMeta {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 800;
+  }
+  
+  .homeCardValue {
+    margin-top: 6px;
+    color: #00ff66;
+    font-weight: 1100;
+    font-size: 26px;
+  }
+  
+  /* ✅ Responsive */
+  @media (max-width: 1100px) {
+    .homeCardsGrid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  
+    .homeArrows {
+      height: 120px;
+    }
+  
+    .homeImpressionsValue {
+      font-size: 44px;
+    }
+  }
+  
+  @media (max-width: 680px) {
+    .homeCardsGrid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .homeArrows {
+      display: none; /* hide arrows on mobile for clean UI */
+    }
+  
+    .homeNavPills {
+      margin-top: 18px;
+    }
+  
+    .homeImpressionsValue {
+      font-size: 36px;
+      padding: 16px 20px;
+    }
+  
+    .homeLogo {
+      max-width: 220px;
+    }
+  }
+  
